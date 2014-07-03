@@ -18,11 +18,11 @@ class AdminReader:
 		file = open(fName)
 		
 		for line in file:
-			if line[:C.end_pos(0)] == '25':
-				ai = AdminItem(line[C.start_pos(1):C.end_pos(1)],
-							line[C.start_pos(2):C.end_pos(2)],
-							line[C.start_pos(3):C.end_pos(3)],
-							line[C.start_pos(4):C.end_pos(4)]
+			if line[:C.end_pos('FLAG')] == '25':
+				ai = AdminItem(line[C.start_pos('DATE'):C.end_pos('DATE')],
+							line[C.start_pos('BATCH'):C.end_pos('BATCH')],
+							line[C.start_pos('SEQ'):C.end_pos('SEQ')],
+							line[C.start_pos('AMOUNT'):C.end_pos('AMOUNT')]
 							)
 				self.adminList.append(ai)
 				

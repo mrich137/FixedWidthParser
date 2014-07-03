@@ -8,14 +8,12 @@ from AdminReader import *
 class AdminWriter:
 	
 	def writeLine(self):
-		line = '+{:-^10}+{:-^8}+{:-^6}+{:-^16}+\n'
-		.format('','','','')
+		line = '+{:-^10}+{:-^8}+{:-^6}+{:-^16}+\n'.format('','','','')
 		self.outFile.write(line)
 	
 	def writeHeader(self):
 		h = ('DATE','BATCH','SEQ','AMOUNT')
-		self.outFile.write('| {:^8} | {:^6} | {:^4} | {:^14} |\n'
-			.format(h[0],h[1],h[2],h[3]))
+		self.outFile.write('| {:^8} | {:^6} | {:^4} | {:^14} |\n'.format(h[0],h[1],h[2],h[3]))
 	
 	def __init__(self, fName, adReader):
 		self.outFile = open(fName, 'w')
@@ -30,8 +28,7 @@ class AdminWriter:
 		for item in adList:
 			i = item.getItem()
 			self.writeLine()
-			self.outFile.write('| {:^8} | {:^6} | {:>4} | {:>14,.2f} |\n'
-				.format(i[0],i[1],i[2],i[3]))
+			self.outFile.write('| {:^8} | {:^6} | {:>4} | {:>14,.2f} |\n'.format(i[0],i[1],i[2],i[3]))
 		
 		self.writeLine()
 		self.outFile.write('\n# ITEMS: {}'.format(len(adReader.adminList)))
