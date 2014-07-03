@@ -26,7 +26,6 @@ class ItemReader:
                             line[C.start_pos(5):C.end_pos(5)],
                             line[C.start_pos(6):C.end_pos(6)],
                             line[C.start_pos(7):C.end_pos(7)],
-                            line[C.start_pos(8):C.end_pos(8)],
                             )
                 self.itemList.append(ri)
                 

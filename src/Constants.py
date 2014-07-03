@@ -15,17 +15,16 @@ class CONSTANTS(ConstBaseClass):
         """ Constructor to define group1 constants """
         
         # DEFINE CONSTANTS HERE
-        self.FIELDS=   ("FLAG", "PC_NO", "RT", "C_ACCT", "AMT", "R_DATA",
-            "S_ACCT", "P_DATE", "RTC")
+        self.FIELDS=   ("FLAG", "CK_NO", "RT", "C_ACCT", "AMT",
+            "DDA_ACCT", "P_DATE", "RTC")
         self.FLAG   = (0, 2)
-        self.PC_NO =    (2, 11)
+        self.CK_NO =    (2, 11)
         self.RT =   (13, 8)
         self.C_ACCT = (21, 15)
         self.AMT = (36, 16)
-        self.R_DATA = (52, 18)
-        self.S_ACCT = (88, 11)
+        self.DDA_ACCT = (88, 11)
         self.P_DATE = (99, 8)
-        self.RTC = (107, 4)
+        self.RTC = (107, 2)
         
         
         
@@ -80,9 +79,9 @@ def main():
     # print AC.start_pos(3)
     # print AC.end_pos(3)
     
-    print AC.get_field(8)
-    print AC.start_pos(8)
-    print AC.end_pos(8)
+    print AC.get_field(7)
+    print AC.start_pos(7)
+    print AC.end_pos(7)
 
 if __name__ == '__main__':
     main()
