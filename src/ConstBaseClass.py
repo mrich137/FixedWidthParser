@@ -11,7 +11,7 @@ class ConstBaseClass:
     forbids to overwrite existing variables
     forbids to add new values if "_locked" variable exists
     """
-        
+    
     def __setattr__(self,name,value):
         """ Base Class constructor to prevent changing const vals """
         if(self.__dict__.has_key("_locked")):    
