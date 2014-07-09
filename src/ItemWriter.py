@@ -52,13 +52,13 @@ class ItemWriter:
 def main():
     # function debugging here
     if len(sys.argv) > 1:
-        outFileNames = sys.argv[1:]
-        for outFileName in outFileNames:
-            ir = ItemReader(outFileName)
+        inFileNames = sys.argv[1:]
+        for inFileName in inFileNames:
+            ir = ItemReader(inFileName)
+            iw = ItemWriter(('../Reports/'+inFileName[4:]+'.rpt'), ir)
     else:
         ir = ItemReader('File.txt')
-    
-    iw = ItemWriter('test.rpt', ir)
+        iw = ItemWriter('test.rpt', ir)
     
 # call to main function
 if __name__ == '__main__':
