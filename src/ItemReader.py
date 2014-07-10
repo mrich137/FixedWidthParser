@@ -6,10 +6,10 @@ from AdminItem import *
 from Constants import CONSTANTS
 
 # class definition
-class AdminReader:
+class ItemReader:
     
     # class variable
-    adminList = []
+    itemList = []
     
     def __init__(self, fName):
         
@@ -24,17 +24,17 @@ class AdminReader:
                             line[C.start_pos('SEQ'):C.end_pos('SEQ')],
                             line[C.start_pos('AMOUNT'):C.end_pos('AMOUNT')]
                             )
-                self.adminList.append(ai)
+                self.itemList.append(ai)
                 
         file.close()
                 
     def printList(self):
-        for item in self.adminList:
+        for item in self.itemList:
             print item.getItem()
             
     def getTotal(self):
         total = 0.0
-        for item in self.adminList:
+        for item in self.itemList:
             amt = item.getItem()[3]
             total += amt
         
@@ -46,10 +46,10 @@ def main():
     if len(sys.argv) > 1:
         fileNames = sys.argv[1:]
         for fileName in fileNames:
-            ar = AdminReader(fileName)
+            ar = ItemReader(fileName)
     else:
-        ar = AdminReader('test.ack')
-    ar.printList()
+        ir = ItemReader('test.ack')
+    ir.printList()
     
 # call to main function
 if __name__ == '__main__':
